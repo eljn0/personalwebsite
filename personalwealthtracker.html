@@ -598,34 +598,6 @@
     </style>
 </head>
 <body>
-    <!-- Login Button (always visible) -->
-    <button class="btn btn-outline-primary login-button" onclick="showLoginModal()">Admin Login</button>
-
-    <!-- Login Modal -->
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Admin Login</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="loginForm" onsubmit="return handleLogin(event)">
-                        <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Main Content -->
     <div class="container py-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -851,36 +823,10 @@
             loadInvestments();
         });
 
-        // Show login modal
-        function showLoginModal() {
-            const modal = new bootstrap.Modal(document.getElementById('loginModal'));
-            modal.show();
-        }
-
-        // Handle login
-        function handleLogin(event) {
-            event.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            if (username === AUTH_CONFIG.username && password === AUTH_CONFIG.password) {
-                const token = btoa(username + ':' + password);
-                localStorage.setItem(AUTH_CONFIG.tokenKey, token);
-                document.body.classList.add('admin-mode');
-                document.body.classList.remove('view-only');
-                const modal = bootstrap.Modal.getInstance(document.getElementById('loginModal'));
-                modal.hide();
-            } else {
-                alert('Invalid username or password');
-            }
-            return false;
-        }
-
         // Handle logout
         function handleLogout() {
             localStorage.removeItem(AUTH_CONFIG.tokenKey);
-            document.body.classList.remove('admin-mode');
-            document.body.classList.add('view-only');
+            window.location.href = 'admin.html';
         }
 
         // Check authentication status
@@ -890,8 +836,7 @@
                 document.body.classList.add('admin-mode');
                 document.body.classList.remove('view-only');
             } else {
-                document.body.classList.remove('admin-mode');
-                document.body.classList.add('view-only');
+                window.location.href = 'admin.html';
             }
         }
 
