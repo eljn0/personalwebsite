@@ -836,14 +836,15 @@
                 document.body.classList.add('admin-mode');
                 document.body.classList.remove('view-only');
             } else {
-                window.location.href = 'admin.html';
+                document.body.classList.add('view-only');
+                document.body.classList.remove('admin-mode');
             }
         }
 
         // Load investments from data.json
         async function loadInvestments() {
             try {
-                const response = await fetch('data.json');
+                const response = await fetch('/api/data');
                 if (!response.ok) {
                     throw new Error('Failed to load data');
                 }
@@ -863,16 +864,22 @@
         // Save investments to data.json
         async function saveInvestments() {
             try {
+                const token = localStorage.getItem(AUTH_CONFIG.tokenKey);
+                if (!token) {
+                    throw new Error('Authentication required');
+                }
+
                 const data = {
                     investments: investments,
                     lastUpdated: new Date().toISOString(),
                     version: "1.0"
                 };
 
-                const response = await fetch('data.json', {
+                const response = await fetch('/api/data', {
                     method: 'PUT',
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        'Authorization': token
                     },
                     body: JSON.stringify(data, null, 2)
                 });
