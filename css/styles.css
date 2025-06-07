@@ -1,0 +1,263 @@
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h2, h3 {
+    color: #f0f6fc;
+    text-align: left;
+}
+
+section {
+    margin-bottom: 40px;
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+p {
+    text-align: left;
+}
+
+.card {
+    background-color: #161b22;
+    padding: 20px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+    border-color: #58a6ff;
+}
+
+.profile-img {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #58a6ff;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.social-links a {
+    color: #c9d1d9;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-links a:hover {
+    color: #58a6ff;
+    transform: translateY(-3px);
+}
+
+.social-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #58a6ff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.social-links a:hover::after {
+    width: 100%;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.skill-tag {
+    background-color: #161b22;
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: 1px solid #30363d;
+    font-size: 14px;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #c9d1d9;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    margin-bottom: 10px;
+}
+
+form textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #238636;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #2ea043;
+}
+
+.loading {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.loaded {
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+        padding-left: 10px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        margin: 15px auto;
+    }
+
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 0;
+        gap: 30px;
+    }
+
+    .social-links a {
+        font-size: 28px;
+    }
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    .card {
+        padding: 15px;
+        margin-top: 15px;
+    }
+
+    .skills-container {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .skill-tag {
+        font-size: 13px;
+        padding: 4px 12px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    section, header {
+        max-width: 100%;
+        overflow-wrap: break-word;
+    }
+
+    a {
+        padding: 5px 0;
+    }
+}
+
+@media (max-width: 380px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-links a {
+        font-size: 24px;
+    }
+}
+
+h1 {
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Hide blog section */
+.blog-section {
+    display: none;
+} 

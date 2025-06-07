@@ -1,0 +1,86 @@
+/* Critical CSS for above-the-fold content */
+body {
+    margin: 0;
+    padding: 40px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #0d1117;
+    color: #c9d1d9;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h1 {
+    text-align: left;
+    padding-left: 20px;
+    color: #f0f6fc;
+}
+
+.profile-img {
+    display: block;
+    margin: 20px auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #58a6ff;
+}
+
+.social-links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.social-links a {
+    color: #c9d1d9;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.social-links a:hover {
+    color: #58a6ff;
+    transform: translateY(-3px);
+}
+
+/* Mobile styles */
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 28px;
+        padding-left: 10px;
+    }
+
+    .profile-img {
+        width: 180px;
+        height: 180px;
+        margin: 15px auto;
+    }
+
+    .social-links {
+        flex-direction: row;
+        justify-content: center;
+        padding-left: 0;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 380px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
+} 
