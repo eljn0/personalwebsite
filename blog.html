@@ -84,27 +84,16 @@
             font-size: 0.8rem;
         }
 
-        .publish-guide {
-            margin-top: 35px;
-            background-color: #0f1723;
-            border: 1px solid #30363d;
-            border-radius: 10px;
-            padding: 20px;
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #8b949e;
         }
 
-        .publish-guide h2 {
-            margin-top: 0;
-            color: #f0f6fc;
-        }
-
-        .publish-guide ol {
-            margin: 0;
-            padding-left: 20px;
-            line-height: 1.7;
-        }
-
-        .publish-guide code {
-            color: #58a6ff;
+        .empty-state i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
         }
 
         @media (max-width: 600px) {
@@ -112,8 +101,7 @@
                 padding: 20px;
             }
 
-            .blog-post,
-            .publish-guide {
+            .blog-post {
                 padding: 18px;
             }
         }
@@ -128,36 +116,10 @@
             <p>I publish essays here about AI, startup lessons, and building products with purpose.</p>
         </header>
 
-        <article class="blog-post">
-            <h2><a href="blog/ai-in-education.html">The Future of AI in Education</a></h2>
-            <div class="blog-meta"><span>March 15, 2024</span> • <span>5 min read</span></div>
-            <p>How AI is reshaping classrooms, personalizing learning, and what founders should build next.</p>
-            <div class="blog-tags">
-                <span class="blog-tag">AI</span>
-                <span class="blog-tag">Education</span>
-                <span class="blog-tag">Future of Work</span>
-            </div>
-        </article>
-
-        <article class="blog-post">
-            <h2><a href="blog/blog-post-template.html">Essay Template</a></h2>
-            <div class="blog-meta"><span>Evergreen</span> • <span>Publishing helper</span></div>
-            <p>Use this template to quickly publish your next essay with consistent formatting.</p>
-            <div class="blog-tags">
-                <span class="blog-tag">Writing</span>
-                <span class="blog-tag">Template</span>
-            </div>
-        </article>
-
-        <section class="publish-guide">
-            <h2>How to Publish a New Essay</h2>
-            <ol>
-                <li>Duplicate <code>blog/blog-post-template.html</code>.</li>
-                <li>Rename the file (example: <code>blog/my-new-essay.html</code>).</li>
-                <li>Update the title, date, reading time, and content.</li>
-                <li>Add a new <code>&lt;article class="blog-post"&gt;</code> card on this page linking to your file.</li>
-            </ol>
-        </section>
+        <div class="empty-state">
+            <i class="fas fa-pen-fancy"></i>
+            <p>Essays coming soon...</p>
+        </div>
     </div>
 </body>
 </html>
