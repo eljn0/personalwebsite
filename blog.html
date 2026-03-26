@@ -55,6 +55,11 @@
             border: 1px solid #30363d;
             border-radius: 10px;
             margin-bottom: 20px;
+            transition: border-color 0.2s ease;
+        }
+
+        .blog-post:hover {
+            border-color: #58a6ff;
         }
 
         .blog-post h2 {
@@ -63,10 +68,27 @@
             color: #f0f6fc;
         }
 
+        .blog-post h2 a {
+            color: #f0f6fc;
+        }
+
+        .blog-post h2 a:hover {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+
         .blog-meta {
             color: #8b949e;
             font-size: 0.9rem;
             margin-bottom: 12px;
+        }
+
+        .blog-excerpt {
+            font-family: Arial, Verdana, sans-serif;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: #c9d1d9;
+            margin-bottom: 14px;
         }
 
         .blog-tags {
@@ -84,16 +106,13 @@
             font-size: 0.8rem;
         }
 
-        .empty-state {
-            text-align: center;
-            padding: 60px 20px;
-            color: #8b949e;
-        }
-
-        .empty-state i {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            opacity: 0.5;
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 14px;
+            font-size: 0.9rem;
+            color: #58a6ff;
         }
 
         @media (max-width: 600px) {
@@ -116,10 +135,21 @@
             <p>I publish essays here about AI, startup lessons, and building products with purpose.</p>
         </header>
 
-        <div class="empty-state">
-            <i class="fas fa-pen-fancy"></i>
-            <p>Essays coming soon...</p>
-        </div>
+        <!-- Example blog post card — replace with your actual post -->
+        <article class="blog-post">
+            <h2><a href="posts/example-post.html">Why Most Startups Die Before They Should</a></h2>
+            <div class="blog-meta">March 26, 2026 &middot; 6 min read</div>
+            <p class="blog-excerpt">
+                Most startups don't fail because of bad ideas — they fail because of bad timing, misaligned teams, or running out of belief before running out of money. After co-founding Gourier and working with early-stage companies at LTC Innovation, I've seen the same patterns repeat. Here's what I wish someone had told me earlier.
+            </p>
+            <div class="blog-tags">
+                <span class="blog-tag">Startups</span>
+                <span class="blog-tag">Lessons</span>
+                <span class="blog-tag">Entrepreneurship</span>
+            </div>
+            <a href="posts/example-post.html" class="read-more">Read more <i class="fas fa-arrow-right"></i></a>
+        </article>
+
     </div>
 </body>
 </html>
